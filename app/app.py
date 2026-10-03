@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 
-from inference import run_inference
+from inference import predict_csv
 
 
 st.title("Sticky Customer Prediction")

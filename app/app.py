@@ -45,17 +45,18 @@ if uploaded_file is not None:
             st.success("Predictions generated successfully.")
 
             st.subheader("Prediction Results")
-            st.dataframe(predictions_df.head())
+            # st.dataframe(predictions_df.head())
+            st.write(predictions_df)
 
             # Convert dataframe to CSV
-            csv = predictions_df.to_csv(index=False).encode("utf-8")
+            # csv = predictions_df.to_csv(index=False).encode("utf-8")
 
-            st.download_button(
-                label="Download Predictions",
-                data=csv,
-                file_name="predictions.csv",
-                mime="text/csv"
-            )
+            # st.download_button(
+            #     label="Download Predictions",
+            #     data=csv,
+            #     file_name="predictions.csv",
+            #     mime="text/csv"
+            # )
 
         except Exception as e:
             st.error(f"Prediction failed: {e}")

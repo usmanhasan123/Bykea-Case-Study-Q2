@@ -19,4 +19,4 @@ def predict_csv(data, output_file=None):
 
     # output_file = Path(output_file) if output_file else input_file.with_name(input_file.stem + '_predictions.csv')
     # data.to_csv(output_file, index=False)
-    return output_file
+    return data

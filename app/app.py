@@ -27,7 +27,7 @@ if uploaded_file is not None:
 
         try:
             # Call inference pipeline
-            predictions_df = run_inference(df)
+            predictions_df = predict_csv(df)
 
             st.success("Predictions generated successfully.")
 

@@ -18,12 +18,12 @@ uploaded_file = st.file_uploader(
 if uploaded_file is not None:
 
     # Read uploaded CSV
-    df = pd.read_csv(uploaded_file)
-
+    # df = pd.read_csv(uploaded_file)
     categorical_columns = ['parent_region_id', 'child_region_id', 'product_code',
                            'acquired_by', 'purchase_weekday', 'acquisition_weekday']
     numeric_columns = ['first_purchase_amount', 'days_to_first_purchase',
                        'purchase_hour', 'acquisition_hour']
+    df = pd.read_csv(uploaded_file, dtype={c: str for c in ['customer_id'] + categorical_columns})
     
     df = df.dropna(subset=['sticky_target']).copy()
     

@@ -20,6 +20,19 @@ if uploaded_file is not None:
     # Read uploaded CSV
     df = pd.read_csv(uploaded_file)
 
+    categorical_columns = ['parent_region_id', 'child_region_id', 'product_code',
+                           'acquired_by', 'purchase_weekday', 'acquisition_weekday']
+    numeric_columns = ['first_purchase_amount', 'days_to_first_purchase',
+                       'purchase_hour', 'acquisition_hour']
+    
+    df = df.dropna(subset=['sticky_target']).copy()
+    
+    for column in categorical_columns:
+        df[column] = df[column].fillna('Unknown').astype('category')
+    for column in numeric_columns:
+        df[column] = pd.to_numeric(df[column], errors='coerce')
+    df['sticky_target'] = df['sticky_target'].astype(int)
+
     st.subheader("Uploaded Data")
     st.dataframe(df.head())
 

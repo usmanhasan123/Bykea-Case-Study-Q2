@@ -1,3 +1,5 @@
+Note: There is no training.csv file in ./data/raw/ because it was too huge. Reach out to me if you need the training.csv to run the notebooks and I'll provide.
+email: usmanhasan081@gmail.com
 
 For notebook execution and development
 1. Install packages: `pip install -r requirements.txt`.

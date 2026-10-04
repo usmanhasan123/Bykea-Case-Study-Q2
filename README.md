@@ -3,7 +3,7 @@ For notebook execution and development
 1. Install packages: `pip install -r requirements.txt`.
 2. Open Jupyter in this folder: `jupyter lab`.
 3. Run **01_data_pipeline.ipynb** from top to bottom using the value of x as *'training'*.
-4. Run **02_modeling_pipeline.ipynb** from top to bottom.
+4. Run **02_modeling_pipeline.ipynb** from top to bottom. The evaluation scores and ROC-AUC curve will be stored as separate experiments in the experiments folder.
 
 For using the app
 5. Run **01_data_pipeline.ipynb** from top to bottom using the value of x as *'production'*. The resultant data will be saved in **'./data/processed/customer_features_prod_data.csv'**
